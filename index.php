@@ -18,10 +18,15 @@ $userDao = new \App\Model\UserDao();
 // }
 
 // UPDATE USER
-$user->setId(1);
-$user->setName('Dummy');
-$user->setEmail('dummy@gmail.com');
+// $user->setId(1);
+// $user->setName('Dummy');
+// $user->setEmail('dummy@gmail.com');
 
-$userDao->update($user);
+// $userDao->update($user);
 
-echo "User updated successfully";
+// echo "User updated successfully";
+
+// DELETE USER
+$userDao->delete(1);
+
+echo "User deleted successfully";

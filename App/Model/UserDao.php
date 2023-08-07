@@ -57,6 +57,16 @@ class UserDao
     }
     public function delete($id)
     {
-        //
+        try {
+            $sql = "DELETE FROM users WHERE id = ?";
+
+            $stmt = Connection::getInstance()->prepare($sql);
+
+            $stmt->bindValue(1, $id);
+
+            $stmt->execute();
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 }
