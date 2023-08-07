@@ -1,16 +1,18 @@
 <?php
 
 require_once 'vendor/autoload.php';
-
 $user = new \App\Model\User();
-
-$user->setName('Pedrinho');
-$user->setEmail('pedrinho@gmail.com');
-
 $userDao = new \App\Model\UserDao();
 
-$userDao->create($user);
+// CREATE USER
+// $user->setName('Pedrinho');
+// $user->setEmail('pedrinho@gmail.com');
+// $userDao->create($user);
+// echo "Created user";
 
-echo "Created user";
+// READ USER
+$userDao->read();
 
-
+foreach ($userDao->read() as $user) {
+    echo $user['id'] . "<br>" . $user['name'] . "</br>" . $user['email'] . "<hr>";
+}

@@ -6,7 +6,6 @@ namespace App\Model;
 
 class UserDao
 {
-
     public function create(User $user)
     {
         try {
@@ -25,7 +24,17 @@ class UserDao
 
     public function read()
     {
-        //
+        $sql = "SELECT * FROM users";
+        try {
+            $stmt = Connection::getInstance()->prepare($sql);
+            if ($stmt->execute()) {
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            } else {
+                echo "Erro: Não foi possível recuperar os dados do banco de dados";
+            }
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 
     public function update(User $user)
