@@ -24,9 +24,11 @@ class UserDao
 
     public function read()
     {
-        $sql = "SELECT * FROM users";
         try {
+            $sql = "SELECT * FROM users";
+
             $stmt = Connection::getInstance()->prepare($sql);
+
             if ($stmt->execute()) {
                 return $stmt->fetchAll(\PDO::FETCH_ASSOC);
             } else {
@@ -39,9 +41,20 @@ class UserDao
 
     public function update(User $user)
     {
-        //
-    }
+        try {
+            $sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
 
+            $stmt = Connection::getInstance()->prepare($sql);
+
+            $stmt->bindValue(1, $user->getName());
+            $stmt->bindValue(2, $user->getEmail());
+            $stmt->bindValue(3, $user->getId());
+
+            $stmt->execute();
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
     public function delete($id)
     {
         //
