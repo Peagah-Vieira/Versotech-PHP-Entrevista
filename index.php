@@ -1,34 +1,16 @@
 <?php
 
-require 'connection.php';
+require_once 'vendor/autoload.php';
 
-$connection = new Connection();
+$user = new \App\Model\User();
 
-$users = $connection->query("SELECT * FROM users");
+$user->setName('Pedrinho');
+$user->setEmail('pedrinho@gmail.com');
 
-echo "<table border='1'>
+$userDao = new \App\Model\UserDao();
 
-    <tr>
-        <th>ID</th>    
-        <th>Nome</th>    
-        <th>Email</th>
-        <th>Ação</th>    
-    </tr>
-";
+$userDao->create($user);
 
-foreach($users as $user) {
+echo "Created user";
 
-    echo sprintf("<tr>
-                      <td>%s</td>
-                      <td>%s</td>
-                      <td>%s</td>
-                      <td>
-                           <a href='#'>Editar</a>
-                           <a href='#'>Excluir</a>
-                      </td>
-                   </tr>",
-        $user->id, $user->name, $user->email);
 
-}
-
-echo "</table>";
