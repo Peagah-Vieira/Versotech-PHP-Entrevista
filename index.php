@@ -1,8 +1,8 @@
 <?php
 
 require_once 'vendor/autoload.php';
-$user = new \App\Model\User();
-$userDao = new \App\Model\UserDao();
+$user = new \App\Models\User();
+$userDao = new \App\Models\UserDao();
 
 // CREATE USER
 // $user->setName('Pedrinho');
