@@ -10,7 +10,7 @@ foreach ($users as $user) {
             <button type="button" class="btn btn-primary">Editar</button>
         </a>
         <a href="delete.php?id=' . $user['id'] . '">
-            <button type="button" class="btn btn-danger">Excluir</button>
+            <button type="button" class="btn btn-danger">Deletar</button>
         </a>
         </td>
     </tr>';
