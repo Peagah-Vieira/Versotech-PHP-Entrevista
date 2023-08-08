@@ -37,5 +37,5 @@ if (isset($_POST['name'], $_POST['email'])) {
 }
 
 include __DIR__ . '/templates/includes/header.php';
-include __DIR__ . '/templates/includes/form.php';
+include __DIR__ . '/templates/includes/update-form.php';
 include __DIR__ . '/templates/includes/footer.php';
