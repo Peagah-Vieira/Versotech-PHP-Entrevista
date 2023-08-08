@@ -10,12 +10,12 @@
     <form method="post">
         <div class="form-group">
             <label>Nome</label>
-            <input type="text" class="form-control" name="name" value="">
+            <input type="text" class="form-control" name="name" value="<?= $user->getName() ?>">
         </div>
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" name="email" value="">
+            <input type="email" class="form-control" name="email" value="<?= $user->getEmail() ?>">
         </div>
 
         <div class="form-group">

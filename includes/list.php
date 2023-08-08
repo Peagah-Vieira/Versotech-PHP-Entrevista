@@ -6,10 +6,10 @@ foreach ($users as $user) {
         <td>' . $user['name'] . '</td>
         <td>' . $user['email'] . '</td>
         <td>
-        <a href="editar.php?id=' . $user['id'] . '">
+        <a href="update.php?id=' . $user['id'] . '">
             <button type="button" class="btn btn-primary">Editar</button>
         </a>
-        <a href="excluir.php?id=' . $user['id'] . '">
+        <a href="delete.php?id=' . $user['id'] . '">
             <button type="button" class="btn btn-danger">Excluir</button>
         </a>
         </td>

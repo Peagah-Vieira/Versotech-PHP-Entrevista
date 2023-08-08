@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\User;
+
 class UserDao
 {
     public function create(User $user)
@@ -32,6 +34,21 @@ class UserDao
             $stmt->execute();
 
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public static function getUserById($id)
+    {
+        try {
+            $sql = "SELECT * FROM users WHERE id = $id";
+
+            $stmt = Connection::getInstance()->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetchObject(User::class);
         } catch (\PDOException $e) {
             echo $e->getMessage();
         }
