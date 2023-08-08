@@ -1,3 +1,10 @@
+<?php
+$results = '';
+foreach ($colors as $color) {
+    $results .= "<option value='$color[id]'>$color[color]</option>";
+}
+$results = strlen($results) ? $results : '<option selected>Nenhuma cor encontrada</option>';
+?>
 <main>
     <section>
         <a href="index.php">
@@ -16,6 +23,13 @@
         <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" name="email">
+        </div>
+
+        <div class="form-group">
+            <label>Cor</label>
+            <select class="form-select form-control" name="color">
+                <?= $results ?>
+            </select>
         </div>
 
         <div class="form-group">

@@ -6,6 +6,7 @@ define('TITLE', 'Editar usuário');
 
 use \App\Models\User;
 use \App\Repository\UserDao;
+use \App\Repository\ColorDao;
 
 // ID VALIDATION
 if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {
@@ -13,6 +14,7 @@ if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {
     exit;
 }
 
+$colors = ColorDao::getColors();
 $user = UserDao::getUserById($_GET['id']);
 
 // USER VALIDATION
@@ -29,6 +31,7 @@ if (isset($_POST['name'], $_POST['email'])) {
     $user->setId($_GET['id']);
     $user->setName($_POST['name']);
     $user->setEmail($_POST['email']);
+    $user->setColor($_POST['color']);
 
     $userDao->update($user);
 

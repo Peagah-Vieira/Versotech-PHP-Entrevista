@@ -6,6 +6,9 @@ define('TITLE', 'Cadastrar Usuário');
 
 use \App\Models\User;
 use \App\Repository\UserDao;
+use \App\Repository\ColorDao;
+
+$colors = ColorDao::getColors();
 
 // POST VALIDATION
 if (isset($_POST['name'], $_POST['email'])) {
@@ -14,6 +17,7 @@ if (isset($_POST['name'], $_POST['email'])) {
 
     $user->setName($_POST['name']);
     $user->setEmail($_POST['email']);
+    $user->setColor($_POST['color']);
 
     $userDao->create($user);
 

@@ -12,12 +12,13 @@ class UserDao
     public function create(User $user)
     {
         try {
-            $sql = "INSERT INTO users(name, email) VALUES (?,?)";
+            $sql = "INSERT INTO users(name, email, color_id) VALUES (?,?,?)";
 
             $stmt = Connection::getInstance()->prepare($sql);
 
             $stmt->bindValue(1, $user->getName());
             $stmt->bindValue(2, $user->getEmail());
+            $stmt->bindValue(3, $user->getColor());
 
             $stmt->execute();
         } catch (\PDOException $e) {
@@ -63,13 +64,14 @@ class UserDao
     public function update(User $user)
     {
         try {
-            $sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
+            $sql = "UPDATE users SET name = ?, email = ?, color_id = ? WHERE id = ?";
 
             $stmt = Connection::getInstance()->prepare($sql);
 
             $stmt->bindValue(1, $user->getName());
             $stmt->bindValue(2, $user->getEmail());
-            $stmt->bindValue(3, $user->getId());
+            $stmt->bindValue(3, $user->getColor());
+            $stmt->bindValue(4, $user->getId());
 
             $stmt->execute();
         } catch (\PDOException $e) {
