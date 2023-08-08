@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Database;
 
-class Connection
+final class Connection
 {
     private static $instance;
 
