@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use \App\Models\User;
 use \App\Repository\UserDao;
@@ -29,6 +29,6 @@ if (isset($_POST['delete'])) {
     exit;
 }
 
-include __DIR__ . '/templates/includes/header.php';
-include __DIR__ . '/templates/includes/confirm-delete.php';
-include __DIR__ . '/templates/includes/footer.php';
+include __DIR__ . '/resources/views/components/header.php';
+include __DIR__ . '/resources/views/components/confirm-delete.php';
+include __DIR__ . '/resources/views/components/footer.php';

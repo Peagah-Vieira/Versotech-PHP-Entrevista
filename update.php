@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 define('TITLE', 'Editar usuário');
 
@@ -36,6 +36,6 @@ if (isset($_POST['name'], $_POST['email'])) {
     exit;
 }
 
-include __DIR__ . '/templates/includes/header.php';
-include __DIR__ . '/templates/includes/update-form.php';
-include __DIR__ . '/templates/includes/footer.php';
+include __DIR__ . '/resources/views/components/header.php';
+include __DIR__ . '/resources/views/components/update-form.php';
+include __DIR__ . '/resources/views/components/footer.php';

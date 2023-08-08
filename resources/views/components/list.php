@@ -31,7 +31,7 @@ foreach ($users as $user) {
 
 $results = strlen($results) ? $results : '<tr>
         <td colspan="6" class="text-center">
-            Nenhum usuário encontrada
+            Nenhum usuário encontrado
         </td>
     </tr>';
 ?>

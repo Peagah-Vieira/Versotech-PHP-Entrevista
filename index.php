@@ -6,6 +6,6 @@ use \App\Repository\UserDao;
 
 $users = UserDao::getUsers();
 
-include __DIR__ . '/templates/includes/header.php';
-include __DIR__ . '/templates/includes/list.php';
-include __DIR__ . '/templates/includes/footer.php';
+include __DIR__ . '/resources/views/components/header.php';
+include __DIR__ . '/resources/views/components/list.php';
+include __DIR__ . '/resources/views/components/footer.php';
