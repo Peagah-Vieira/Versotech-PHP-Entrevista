@@ -1,8 +1,10 @@
 <?php
 
-require_once 'vendor/autoload.php';
-$user = new \App\Models\User();
-$userDao = new \App\Models\UserDao();
+require_once __DIR__ . '/vendor/autoload.php';
+
+include __DIR__ . '/includes/header.php';
+// $user = new \App\Models\User();
+// $userDao = new \App\Models\UserDao();
 
 // CREATE USER
 // $user->setName('Pedrinho');
@@ -27,6 +29,6 @@ $userDao = new \App\Models\UserDao();
 // echo "User updated successfully";
 
 // DELETE USER
-$userDao->delete(1);
+// $userDao->delete(1);
 
-echo "User deleted successfully";
+// echo "User deleted successfully";
