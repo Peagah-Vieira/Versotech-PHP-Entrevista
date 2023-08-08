@@ -2,25 +2,16 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use \App\Models\UserDao;
+
+$users = UserDao::getUsers();
+
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/list.php';
 include __DIR__ . '/includes/footer.php';
 
 // $user = new \App\Models\User();
 // $userDao = new \App\Models\UserDao();
-
-// CREATE USER
-// $user->setName('Pedrinho');
-// $user->setEmail('pedrinho@gmail.com');
-// $userDao->create($user);
-// echo "Created user";
-
-// READ USER
-// $userDao->read();
-
-// foreach ($userDao->read() as $user) {
-//     echo $user['id'] . "<br>" . $user['name'] . "</br>" . $user['email'] . "<hr>";
-// }
 
 // UPDATE USER
 // $user->setId(1);

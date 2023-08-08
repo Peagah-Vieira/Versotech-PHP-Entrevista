@@ -22,18 +22,16 @@ class UserDao
         }
     }
 
-    public function read()
+    public static function getUsers()
     {
         try {
             $sql = "SELECT * FROM users";
 
             $stmt = Connection::getInstance()->prepare($sql);
 
-            if ($stmt->execute()) {
-                return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            } else {
-                echo "Erro: Não foi possível recuperar os dados do banco de dados";
-            }
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             echo $e->getMessage();
         }
@@ -55,6 +53,7 @@ class UserDao
             echo $e->getMessage();
         }
     }
+
     public function delete($id)
     {
         try {
