@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 define('TITLE', 'Cadastrar Usuário');
 
 use \App\Models\User;
-use \App\Models\UserDao;
+use \App\Repository\UserDao;
 
 // POST VALIDATION
 if (isset($_POST['name'], $_POST['email'])) {
@@ -17,9 +17,10 @@ if (isset($_POST['name'], $_POST['email'])) {
 
     $userDao->create($user);
 
-    echo $_POST['name'] . "was created successfully";
+    header('location: index.php?status=success');
+    exit;
 }
 
-include __DIR__ . '/includes/header.php';
-include __DIR__ . '/includes/form.php';
-include __DIR__ . '/includes/footer.php';
+include __DIR__ . '/templates/includes/header.php';
+include __DIR__ . '/templates/includes/form.php';
+include __DIR__ . '/templates/includes/footer.php';

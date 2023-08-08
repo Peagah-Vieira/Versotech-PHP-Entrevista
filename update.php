@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 define('TITLE', 'Editar usuário');
 
 use \App\Models\User;
-use \App\Models\UserDao;
+use \App\Repository\UserDao;
 
 // ID VALIDATION
 if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {
@@ -36,6 +36,6 @@ if (isset($_POST['name'], $_POST['email'])) {
     exit;
 }
 
-include __DIR__ . '/includes/header.php';
-include __DIR__ . '/includes/form.php';
-include __DIR__ . '/includes/footer.php';
+include __DIR__ . '/templates/includes/header.php';
+include __DIR__ . '/templates/includes/form.php';
+include __DIR__ . '/templates/includes/footer.php';

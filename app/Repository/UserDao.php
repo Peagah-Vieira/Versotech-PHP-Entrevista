@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Models;
+namespace App\Repository;
 
+use App\Database\Connection;
 use App\Models\User;
 
 class UserDao
