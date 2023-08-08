@@ -28,7 +28,12 @@ class UserDao
     public static function getUsers()
     {
         try {
-            $sql = "SELECT * FROM users";
+            $sql = "SELECT users.id AS id,
+            users.name AS name,
+            users.email AS email,
+            colors.color_name AS color
+            FROM users
+            LEFT JOIN colors ON colors.id = users.color_id";
 
             $stmt = Connection::getInstance()->prepare($sql);
 

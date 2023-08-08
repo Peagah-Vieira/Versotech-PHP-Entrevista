@@ -18,6 +18,7 @@ foreach ($users as $user) {
         <td>' . $user['id'] . '</td>
         <td>' . $user['name'] . '</td>
         <td>' . $user['email'] . '</td>
+        <td>' . $user['color'] . '</td>
         <td>
         <a href="update.php?id=' . $user['id'] . '">
             <button type="button" class="btn btn-primary">Editar</button>
@@ -50,6 +51,7 @@ $results = strlen($results) ? $results : '<tr>
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
+                    <th>Cor</th>
                     <th>Ações</th>
                 </tr>
             </thead>
